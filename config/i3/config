@@ -43,8 +43,8 @@ new_window 1pixel
 title_align center
 
 # Turn on the keypad.
-#exec --no-startup-id numlockx on
-#exec_always --no-startup-id numlockx on
+#exec --no-startup-id "numlockx on"
+#exec_always --no-startup-id "numlockx on"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -112,8 +112,8 @@ exec_always --no-startup-id "feh --recursive --randomize --bg-fill --no-fehbg ~/
 # Nitrogen is a popular wallpaper manager that lets you manage and set up your wallpaper. 
 # To set up wallpaper, start Nitrogen and navigate to the directory where the wallpaper image is stored. 
 # Nitrogen should automatically capture images for you to choose from.
-#exec --no-startup-id nitrogen --restore
-#exec_always --no-startup-id nitrogen --restore
+#exec --no-startup-id "nitrogen --restore"
+#exec_always --no-startup-id "nitrogen --restore"
 
 # Start fcitx when logging in.
 # Don't forget to install a software called fcitx before using it.
