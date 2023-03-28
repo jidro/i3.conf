@@ -18,6 +18,11 @@ hide_edge_borders smart
 default_border pixel 2
 default_floating_border pixel 2
 
+# Solve the tab level change problem caused 
+# by the height inconsistency 
+# between Chinese and English in tab mode.
+for_window [title=".*"] title_format ゜%title゜
+
 # Set all window borders to 2 pixels
 for_window [class="^.*"] border pixel 2
 ##
@@ -265,7 +270,7 @@ client.background	#00000000
 bar {
 	# Start the status bar of i3wm.
 	# If not, comment all Settings in the bar parameter. 
-        status_command i3status
+	status_command i3status
 
 	# Set the i3wm status bar at the top.
 	# If not, the i3wm status bar defaults to the bottom.
