@@ -9,8 +9,12 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+## Set the mod key.
+#
 set $mod Mod4
 
+## Set window preferences.
+#
 # Sets the window without borders and other window settings.
 new_float normal
 #hide_edge_borders both
@@ -42,10 +46,19 @@ new_window 1pixel
 # Center the window title.
 title_align center
 
+## Set the floating window movement key.
+#
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+## Set up the keypad.
+#
 # Turn on the keypad.
 #exec --no-startup-id "numlockx on"
 #exec_always --no-startup-id "numlockx on"
 
+## Set the system font.
+#
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:monospace 8
@@ -54,6 +67,8 @@ font pango:monospace 8
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 
+## Set the computer hibernation lock screen.
+#
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
@@ -62,11 +77,19 @@ font pango:monospace 8
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
+## Set up network management tools.
+#
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 #exec_always --no-startup-id nm-applet
 
+## Set volume management.
+#
+# Start the volume control icon when logging in.
+# Don't forget to install a software called volumeicon before using it.
+exec --no-startup-id volumeicon
+#exec_always --no-startup-id volumeicon
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -74,9 +97,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
+## Set important system level shortcuts.
+#
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec --no-startup-id xterm
@@ -84,6 +106,8 @@ bindsym $mod+Return exec --no-startup-id xterm
 # kill focused window
 bindsym $mod+Shift+q kill
 
+## Set up the application launcher.
+#
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
@@ -95,6 +119,8 @@ bindsym $mod+d exec --no-startup-id "rofi -modi drun,run -show drun"
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
+## Set window effects.
+#
 # Enable window transparency when logging in .
 # Don't forget to install a software named picom 
 # or install a software named compton before using it .
@@ -103,34 +129,46 @@ exec_always --no-startup-id "picom --experimental-backends -CGb"
 #exec --no-startup-id "compton -b"
 #exec_always --no-startup-id "compton -b"
 
+## Set up desktop wallpaper.
+#
 # Randomly select wallpaper when logging in.
 # Remember to install a software called feh before using it.
-# Remember to put some favorite pictures under ~/Wallpapers.
-#exec --no-startup-id "feh --recursive --randomize --bg-fill --no-fehbg ~/Wallpapers"
-exec_always --no-startup-id "feh --recursive --randomize --bg-fill --no-fehbg ~/Wallpapers"
+# Remember to put some favorite pictures under /usr/share/backgrounds/.
+# Similarly, can set the file path to any path and place your favorite images in it 
+# for better management of desktop wallpaper.
+#exec --no-startup-id "feh --recursive --randomize --bg-fill --no-fehbg /usr/share/backgrounds/"
+exec_always --no-startup-id "feh --recursive --randomize --bg-fill --no-fehbg /usr/share/backgrounds/"
 # Alternatively, nitrogen can be used to set up the wallpaper.
 # Nitrogen is a popular wallpaper manager that lets you manage and set up your wallpaper. 
 # To set up wallpaper, start Nitrogen and navigate to the directory where the wallpaper image is stored. 
 # Nitrogen should automatically capture images for you to choose from.
 #exec --no-startup-id "nitrogen --restore"
 #exec_always --no-startup-id "nitrogen --restore"
+# Similarly, you can also use the software Variety to set up desktop wallpaper.
+# Again, don't forget to install an application called variety.
+# If use the Variety application to manage desktop wallpaper, 
+# don't need to download any image files yourself. 
+# The Variety application will help you download and set them up.
+#exec --no-startup-id variety
+#exec_always --no-startup-id variety
 
+## Set the input method.
+#
 # Start fcitx when logging in.
 # Don't forget to install a software called fcitx before using it.
 #exec --no-startup-id "fcitx5 &"
 #exec_always --no-startup-id "fcitx5 &"
 
-# Start the volume control icon when logging in.
-# Don't forget to install a software called volumeicon before using it.
-exec --no-startup-id volumeicon
-#exec_always --no-startup-id volumeicon
-
+## Set up desktop notifications.
+#
 # Set desktop notifications to start automatically.
 # Don't forget to install an app called dunst.
 # Don't forget to install an app called Notify-send.
 exec --no-startup-id "dunst &"
 #exec_always --no-startup-id "dunst &"
 
+## Set other shortcut keys.
+#
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -181,8 +219,7 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-#
-# Workspaces:
+## Workspaces:
 #
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -228,8 +265,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-#
-# Resizing containers:
+## Resizing containers:
 #
 # resize window (you can also use the mouse for that)
 
@@ -269,8 +305,7 @@ client.urgent		#BF616A		#BF616A		#ffffff		#268BD2
 client.placeholder	#84FFFF		#909090		#FFFFFF		#268BD2
 client.background	#00000000
 
-#
-# Status Bar:
+## Status Bar:
 #
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -302,4 +337,6 @@ bar {
 
 }
 
+## Set other custom settings.
+#
 #include $HOME/.config/i3/config.d/*
