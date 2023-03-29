@@ -265,6 +265,16 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
+# Theme colors
+# Use RGBA colors.
+# <colorclass> 		<border> 	<background> 	<text> 		<indicator> 	<child_border>
+client.focused		#2F522F		#1d1f2110	#1d1f2110	#1d1f2110	#336633
+client.focused_inactive	#4C556A		#84FFFF		#2E3440		#ECECEC		#ECECEC
+client.unfocused	#84FFFF		#84FFFF		#171717		#ECECEC		#ECECEC
+client.urgent		#BF616A		#BF616A		#ffffff		#268BD2
+client.placeholder	#84FFFF		#909090		#FFFFFF		#268BD2
+client.background	#00000000
+
 ## Resizing containers:
 #
 # resize window (you can also use the mouse for that)
@@ -294,16 +304,6 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
-
-# Theme colors
-# Use RGBA colors.
-# <colorclass> 		<border> 	<background> 	<text> 		<indicator> 	<child_border>
-client.focused		#2F522F		#1d1f2110	#1d1f2110	#1d1f2110	#336633
-client.focused_inactive	#4C556A		#84FFFF		#2E3440		#ECECEC		#ECECEC
-client.unfocused	#84FFFF		#84FFFF		#171717		#ECECEC		#ECECEC
-client.urgent		#BF616A		#BF616A		#ffffff		#268BD2
-client.placeholder	#84FFFF		#909090		#FFFFFF		#268BD2
-client.background	#00000000
 
 ## Status Bar:
 #
@@ -344,8 +344,8 @@ bar {
 
 	# Set the font in the status bar.
 	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-	font pango:DejaVu Sans Mono 8
-	#font pango:monospace 8
+	#font pango:DejaVu Sans Mono, Icons 8
+	font pango:monospace, Icons 8
 
 	# Set the separator in the status bar.
 	#separator_symbol ":|:"
