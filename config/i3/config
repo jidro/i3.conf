@@ -322,15 +322,16 @@ bar {
 	# The dock mode is permanently visible,
 	# The hide mode is a hidden mode, which is displayed only when the $mod key is pressed,
 	# The invisible mode is permanently hidden.
+	#mode hide
 	mode dock
 	# Set the hidden state.
-	# Only when the docking mode is set to hide mode can it be enabled, which can be divided into hide mode and show mode.
+	# Can be divided into hide mode and show mode.
 	# The hide mode is displayed only when the $mod key is pressed,
 	# The show mode is displayed in the visible workspace.
 	hidden_state hide
 	# Set the status bar to display shortcut keys.
-	# The default is $mod1, which is the system mode mod key.
-	modifier Mod1
+	# The default is the system mode mod key.
+	modifier Mod4
 
 	# Set the workspace buttons in the status bar.
 	workspace_buttons yes
