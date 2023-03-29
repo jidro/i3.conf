@@ -47,9 +47,10 @@ cpu_temperature 0 {
 }
 
 wireless _first_ {
-	format_up = "W: (%quality at %essid, %bitrate) %ip"
+#	format_up = "W: (%quality at %essid, %bitrate) %ip"
 #	format_up = "W: (%quality at %essid, %bitrate / %frequency) %ip"
 #	format_up = "%03d%s"
+	format_up = "W: (%essid, %bitrate) %ip"
 	format_down = "W: down"
 }
 

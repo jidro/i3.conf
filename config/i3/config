@@ -157,7 +157,7 @@ exec_always --no-startup-id "feh --recursive --randomize --bg-fill --no-fehbg /u
 # Start fcitx when logging in.
 # Don't forget to install a software called fcitx before using it.
 #exec --no-startup-id "fcitx5 &"
-#exec_always --no-startup-id "fcitx5 &"
+exec_always --no-startup-id "fcitx5 &"
 
 ## Set up desktop notifications.
 #
@@ -345,8 +345,8 @@ bar {
 
 	# Set the font in the status bar.
 	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-	#font pango:DejaVu Sans Mono, Icons 8
-	font pango:monospace, Icons 8
+	font pango:DejaVu Sans Mono, Icons 8
+	#font pango:monospace, Icons 8
 
 	# Set the separator in the status bar.
 	#separator_symbol ":|:"
