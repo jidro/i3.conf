@@ -318,17 +318,64 @@ bar {
 	# If not, the i3wm status bar defaults to the bottom.
 	position top
 
+	# Set the docking method for the status bar.
+	# The dock mode is permanently visible,
+	# The hide mode is a hidden mode, which is displayed only when the $mod key is pressed,
+	# The invisible mode is permanently hidden.
+	mode dock
+	# Set the hidden state.
+	# Only when the docking mode is set to hide mode can it be enabled, which can be divided into hide mode and show mode.
+	# The hide mode is displayed only when the $mod key is pressed,
+	# The show mode is displayed in the visible workspace.
+	hidden_state hide
+	# Set the status bar to display shortcut keys.
+	# The default is $mod1, which is the system mode mod key.
+	modifier Mod1
+
+	# Set the workspace buttons in the status bar.
+	workspace_buttons yes
+	# Sets the number of workspace buttons in the status bar.
+	strip_workspace_numbers yes
+	# Sets the name of the workspace button in the status bar.
+	strip_workspace_name yes
+
+	# Set not to display small icons.
+	#tray_output none
+
+	# Set the font in the status bar.
+	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+	font pango:DejaVu Sans Mono 8
+	#font pango:monospace 8
+
+	# Set the separator in the status bar.
+	#separator_symbol ":|:"
+
+	# Set the status bar to semi transparent.
+	# Use the transparency parameter to transparently set the i3bar.
+	i3bar_command i3bar --transparency
+
+	# Sets the size of the status bar.
+	# 2px left/right and 2px top/bottom padding
+	#padding 2px
+	# 2px top/bottom padding, no left/right padding
+	#padding 2px 0
+	# 2px top padding, no left/right padding, 4px bottom padding
+	#padding 2px 0 4px
+	# 2px top padding, 6px right padding, 4px bottom padding, 1px left padding
+	#padding 2px 6px 4px 1px
+
 	# Color Settings in the status bar.
 	colors {
 	statusline #ffffff
 	background #323232
-	#background #9370DB3F
 	separator #778899
+
 	# Use RGBA colors. 	# <Boundaries> 	<Background> 	<Text>
 	focused_workspace  	#778899A5 	#87CEEBA5 	#FFFAFAF5
-	#inactive_workspace 	#7788993F 	#AFEEEE3F 	#FFFAFAF5
+	active_workspace	#333333		#5f676a		#ffffff
 	inactive_workspace	#32323200	#32323200	#5c5c5c
 	urgent_workspace   	#80808072 	#FF450072 	#FFFAFAF5
+	binding_mode		#2f343a		#900000		#ffffff
 	}
 
 	# When the status_command prints a new line to stdout, i3 status bar updates.
