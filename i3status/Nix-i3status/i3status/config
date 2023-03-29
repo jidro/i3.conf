@@ -111,7 +111,18 @@ disk "/" {
 
 disk "/home" {
 #	format = "⛁ %avail"
-	format = "⛁ %free"
+#	format = "⛁ %free (%avail)/ %total"
+#	format = "⛁ %percentage_used used, %percentage_free free, %percentage_avail avail"
+#	format = "⛁ %avail (%percentage_avail) Avail"
+	format = "⛁ %avail (%percentage_avail)"
+	prefix_type = custom
+	low_threshold = "10"
+	format_below_threshold = "Warning: %percentage_avail"
+	threshold_type = percentage_free
+	align = "left"
+	min_width = 100
+	separator = false
+	separator_block_width = 1
 }
 
 memory {
