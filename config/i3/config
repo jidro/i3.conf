@@ -124,8 +124,8 @@ bindsym $mod+d exec --no-startup-id "rofi -modi drun,run -show drun"
 # Enable window transparency when logging in .
 # Don't forget to install a software named picom 
 # or install a software named compton before using it .
-#exec --no-startup-id "picom --experimental-backends -CGb"
-exec_always --no-startup-id "picom --experimental-backends -CGb"
+exec --no-startup-id "picom --experimental-backends -CGb"
+#exec_always --no-startup-id "picom --experimental-backends -CGb"
 #exec --no-startup-id "compton -b"
 #exec_always --no-startup-id "compton -b"
 
@@ -268,12 +268,12 @@ bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed 
 # Theme colors
 # Use RGBA colors.
 # <colorclass> 		<border> 	<background> 	<text> 		<indicator> 	<child_border>
-client.focused		#2F522F		#1d1f2110	#1d1f2110	#1d1f2110	#336633
+client.focused		#2F522F		#153A35		#211F1D		#003B43		#336633
 client.focused_inactive	#4C556A		#84FFFF		#2E3440		#ECECEC		#ECECEC
 client.unfocused	#84FFFF		#84FFFF		#171717		#ECECEC		#ECECEC
 client.urgent		#BF616A		#BF616A		#ffffff		#268BD2
 client.placeholder	#84FFFF		#909090		#FFFFFF		#268BD2
-client.background	#00000000
+client.background	#464343
 
 ## Resizing containers:
 #
@@ -367,16 +367,16 @@ bar {
 
 	# Color Settings in the status bar.
 	colors {
-	statusline #ffffff
-	background #323232
-	separator #778899
+	background	#454352
+	statusline	#ECEFFF
+	separator	#94B0B3
 
 	# Use RGBA colors. 	# <Boundaries> 	<Background> 	<Text>
-	focused_workspace  	#778899A5 	#87CEEBA5 	#FFFAFAF5
-	active_workspace	#333333		#5f676a		#ffffff
-	inactive_workspace	#32323200	#32323200	#5c5c5c
-	urgent_workspace   	#80808072 	#FF450072 	#FFFAFAF5
-	binding_mode		#2f343a		#900000		#ffffff
+	focused_workspace  	#4D5B55 	#637F8D 	#FAFDFF
+	active_workspace	#484E57		#776F82		#FAFBFF
+	inactive_workspace	#4D6873		#475B67		#B6C4CC
+	urgent_workspace   	#436B69 	#E40028 	#E8F7FF
+	binding_mode		#425359		#7A2462		#FCF9EE
 	}
 
 	# When the status_command prints a new line to stdout, i3 status bar updates.
