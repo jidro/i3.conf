@@ -137,7 +137,8 @@ exec --no-startup-id "picom --experimental-backends -CGb"
 # Similarly, can set the file path to any path and place your favorite images in it 
 # for better management of desktop wallpaper.
 #exec --no-startup-id "feh --recursive --randomize --bg-fill --no-fehbg /usr/share/backgrounds/"
-exec_always --no-startup-id "feh --recursive --randomize --bg-fill --no-fehbg /usr/share/backgrounds/"
+#exec_always --no-startup-id "feh --recursive --randomize --bg-fill --no-fehbg /usr/share/backgrounds/"
+exec_always --no-startup-id "feh --recursive --randomize --bg-fill --no-fehbg /usr/share/wallpapers/"
 # Alternatively, nitrogen can be used to set up the wallpaper.
 # Nitrogen is a popular wallpaper manager that lets you manage and set up your wallpaper. 
 # To set up wallpaper, start Nitrogen and navigate to the directory where the wallpaper image is stored. 
@@ -164,8 +165,22 @@ exec_always --no-startup-id "fcitx5 &"
 # Set desktop notifications to start automatically.
 # Don't forget to install an app called dunst.
 # Don't forget to install an app called Notify-send.
-exec --no-startup-id "dunst &"
-#exec_always --no-startup-id "dunst &"
+#exec --no-startup-id "dunst &"
+exec_always --no-startup-id "dunst &"
+
+## Set up the touchpad.
+#
+# Set up the touchpad for your laptop.
+# The usability of the touchpad of the notebook is set with one touch, 
+# including but not limited to gestures 
+# such as tapping, right clicking, up and down strokes of the notebook.
+# Don't forget to install a dependency package 
+# for a notebook touchpad called libinput.
+# If using this file, 
+# don't forget to install a software package 
+# called touchpad-indicator for notebook touchpad management.
+#exec --no-startup-id "/usr/bin/touchpad-indicator &"
+exec_always --no-startup-id "/usr/bin/touchpad-indicator &"
 
 ## Set other shortcut keys.
 #
