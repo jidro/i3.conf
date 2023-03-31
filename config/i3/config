@@ -51,12 +51,6 @@ title_align center
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-## Set up the keypad.
-#
-# Turn on the keypad.
-#exec --no-startup-id "numlockx on"
-#exec_always --no-startup-id "numlockx on"
-
 ## Set the system font.
 #
 # Font for window titles. Will also be used by the bar unless a different font
@@ -84,6 +78,12 @@ exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 #exec_always --no-startup-id nm-applet
 
+## Set up the keypad.
+#
+# Turn on the keypad.
+#exec --no-startup-id "numlockx on"
+#exec_always --no-startup-id "numlockx on"
+
 ## Set volume management.
 #
 # Start the volume control icon when logging in.
@@ -96,6 +96,19 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+## Set to read Xresources data.
+#
+# Set to read xterm configuration data in Xresources. 
+# The xterm configuration reads the data 
+# in /etc/X11/app-defaults by default. 
+# The purpose of this configuration is 
+# to set the path to read the xterm configuration data 
+# by default to $HOME/.Xresources. 
+# Before using this configuration, 
+# don't forget to install an application called xorg-xrdb.
+#exec --no-startup-id "xrdb -merge -I$HOME ~/.Xresources"
+exec_always --no-startup-id "xrdb -merge -I$HOME ~/.Xresources"
 
 ## Set important system level shortcuts.
 #
