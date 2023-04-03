@@ -10,8 +10,9 @@ general {
 	interval 	=	5
 	color_good 	=	"#189C8C"
 	color_bad 	=	"#BFADAE"
-#	color_bad 	=	"#FF81CE"
+#	color_bad 	=	"#D11779"
 	color_degraded 	=	"#D11779"
+#	color_degraded 	=	"#BFADAE"
 	color_separator	=	"#F2ECFF"
 }
 
@@ -77,7 +78,8 @@ path_exists VPN {
 }
 
 battery all {
-	format = "%status %percentage %remaining %emptytime"
+#	format = "%status %percentage %remaining %emptytime"
+	format = "%status %percentage"
 	format_down = "No battery"
 	last_full_capacity = true
 	integer_battery_capacity = true
