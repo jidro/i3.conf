@@ -113,8 +113,21 @@ exec_always --no-startup-id "xrdb -merge -I$HOME ~/.Xresources"
 ## Set important system level shortcuts.
 #
 # start a terminal
-#bindsym $mod+Return exec i3-sensible-terminal
+# The original terminal configuration of i3wm window manager
+# is i3-sensible-terminal as the default terminal.
+#bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
+# Replace the default terminal of i3wm window manager with xterm.
+# Xterm is the standard terminal simulator of X Window system.
+# Xterm is highly configurable,
+# with many useful and some unusual features.
 bindsym $mod+Return exec --no-startup-id xterm
+# Replace the default terminal of i3wm window manager with kitty.
+# kitty is a scriptable OpenGL based terminal emulator 
+# with TrueColor, ligatures support, protocol extensions 
+# for keyboard input and image rendering. 
+# It also offers tiling capabilities, like GNU Screen or tmux. 
+#bindsym $mod+Return exec --no-startup-id kitty
+
 
 # kill focused window
 bindsym $mod+Shift+q kill
