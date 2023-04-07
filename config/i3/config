@@ -71,6 +71,24 @@ font pango:monospace 8
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
+## Set important system level shortcuts.
+#
+# start a terminal
+# The original terminal configuration of i3wm window manager
+# is i3-sensible-terminal as the default terminal.
+#bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
+# Replace the default terminal of i3wm window manager with xterm.
+# Xterm is the standard terminal simulator of X Window system.
+# Xterm is highly configurable,
+# with many useful and some unusual features.
+bindsym $mod+Return exec --no-startup-id xterm
+# Replace the default terminal of i3wm window manager with kitty.
+# kitty is a scriptable OpenGL based terminal emulator 
+# with TrueColor, ligatures support, protocol extensions 
+# for keyboard input and image rendering. 
+# It also offers tiling capabilities, like GNU Screen or tmux. 
+#bindsym $mod+Return exec --no-startup-id kitty
+
 ## Set up network management tools.
 #
 # NetworkManager is the most popular way to manage wireless networks on Linux,
@@ -110,27 +128,12 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 #exec --no-startup-id "xrdb -merge -I$HOME ~/.Xresources"
 exec_always --no-startup-id "xrdb -merge -I$HOME ~/.Xresources"
 
-## Set important system level shortcuts.
-#
-# start a terminal
-# The original terminal configuration of i3wm window manager
-# is i3-sensible-terminal as the default terminal.
-#bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
-# Replace the default terminal of i3wm window manager with xterm.
-# Xterm is the standard terminal simulator of X Window system.
-# Xterm is highly configurable,
-# with many useful and some unusual features.
-bindsym $mod+Return exec --no-startup-id xterm
-# Replace the default terminal of i3wm window manager with kitty.
-# kitty is a scriptable OpenGL based terminal emulator 
-# with TrueColor, ligatures support, protocol extensions 
-# for keyboard input and image rendering. 
-# It also offers tiling capabilities, like GNU Screen or tmux. 
-#bindsym $mod+Return exec --no-startup-id kitty
-
-
 # kill focused window
 bindsym $mod+Shift+q kill
+
+## Setup bookmarks for file manager
+#exec --no-startup-id gtk-bookmarks-update
+exec_always --no-startup-id gtk-bookmarks-update
 
 ## Set up the application launcher.
 #
@@ -163,8 +166,8 @@ exec --no-startup-id "picom -CGb"
 # Similarly, can set the file path to any path and place your favorite images in it 
 # for better management of desktop wallpaper.
 #exec --no-startup-id "feh --recursive --randomize --bg-fill --no-fehbg /usr/share/backgrounds/"
-#exec_always --no-startup-id "feh --recursive --randomize --bg-fill --no-fehbg /usr/share/backgrounds/"
-exec_always --no-startup-id "feh --recursive --randomize --bg-fill --no-fehbg /usr/share/wallpapers/"
+exec_always --no-startup-id "feh --recursive --randomize --bg-fill --no-fehbg /usr/share/backgrounds/"
+#exec_always --no-startup-id "feh --recursive --randomize --bg-fill --no-fehbg /usr/share/wallpapers/"
 # Alternatively, nitrogen can be used to set up the wallpaper.
 # Nitrogen is a popular wallpaper manager that lets you manage and set up your wallpaper. 
 # To set up wallpaper, start Nitrogen and navigate to the directory where the wallpaper image is stored. 
@@ -178,6 +181,21 @@ exec_always --no-startup-id "feh --recursive --randomize --bg-fill --no-fehbg /u
 # The Variety application will help you download and set them up.
 #exec --no-startup-id variety
 #exec_always --no-startup-id variety
+
+## Set the screen resolution.
+#
+# Use xrandr application software to set the resolution of the screen.
+# You can use the xrandr command directly to see the size 
+# of all currently settable resolutions.
+# The size of the resolution currently set using the xrandr command 
+# is the most suitable value that can be set at present.
+# If you don't like it, you can use the xrandr command to reset it.
+#exec --no-startup-id "xrandr --auto"
+exec_always --no-startup-id "xrandr --auto"
+# Here is the screen resolution I set for my virtual machine.
+# Of course,you can use it directly on your physical computer.
+#exec --no-startup-id "xrandr -s 1024x768"
+#exec_always --no-startup-id "xrandr -s 1024x768"
 
 ## Set the input method.
 #
