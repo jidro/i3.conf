@@ -106,8 +106,8 @@ exec_always --no-startup-id nm-applet
 #
 # Start the volume control icon when logging in.
 # Don't forget to install a software called volumeicon before using it.
-exec --no-startup-id volumeicon
-#exec_always --no-startup-id volumeicon
+#exec --no-startup-id volumeicon
+exec_always --no-startup-id volumeicon
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -153,8 +153,8 @@ bindsym $mod+d exec --no-startup-id "rofi -modi drun,run -show drun"
 # Enable window transparency when logging in .
 # Don't forget to install a software named picom 
 # or install a software named compton before using it .
-exec --no-startup-id "picom -CGb"
-#exec_always --no-startup-id "picom -CGb"
+#exec --no-startup-id "picom -CGb"
+exec_always --no-startup-id "picom -CGb"
 #exec --no-startup-id "compton -b"
 #exec_always --no-startup-id "compton -b"
 
