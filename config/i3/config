@@ -71,6 +71,18 @@ font pango:monospace 8
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
+## Set up network management tools.
+#
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+#exec --no-startup-id nm-applet
+exec_always --no-startup-id nm-applet
+# ConnMan is a command line network manager designed for embedded devices and fast response.
+# ConnMan is extended by a plug-in but has built-in DHCP and NTP support.
+# The following is the front end corner diagram for setting ConnMan to start on the machine.
+#exec --no-startup-id connman-ui-gtk
+#exec_always --no-startup-id connman-ui-gtk
+
 ## Set important system level shortcuts.
 #
 # start a terminal
@@ -81,20 +93,13 @@ exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # Xterm is the standard terminal simulator of X Window system.
 # Xterm is highly configurable,
 # with many useful and some unusual features.
-bindsym $mod+Return exec --no-startup-id xterm
+#bindsym $mod+Return exec --no-startup-id xterm
 # Replace the default terminal of i3wm window manager with kitty.
 # kitty is a scriptable OpenGL based terminal emulator 
 # with TrueColor, ligatures support, protocol extensions 
 # for keyboard input and image rendering. 
 # It also offers tiling capabilities, like GNU Screen or tmux. 
-#bindsym $mod+Return exec --no-startup-id kitty
-
-## Set up network management tools.
-#
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-#exec --no-startup-id nm-applet
-exec_always --no-startup-id nm-applet
+bindsym $mod+Return exec --no-startup-id kitty
 
 ## Set up the keypad.
 #
@@ -106,8 +111,8 @@ exec_always --no-startup-id nm-applet
 #
 # Start the volume control icon when logging in.
 # Don't forget to install a software called volumeicon before using it.
-#exec --no-startup-id volumeicon
-exec_always --no-startup-id volumeicon
+exec --no-startup-id volumeicon
+#exec_always --no-startup-id volumeicon
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -191,11 +196,11 @@ exec_always --no-startup-id "feh --recursive --randomize --bg-fill --no-fehbg /u
 # is the most suitable value that can be set at present.
 # If you don't like it, you can use the xrandr command to reset it.
 #exec --no-startup-id "xrandr --auto"
-exec_always --no-startup-id "xrandr --auto"
+#exec_always --no-startup-id "xrandr --auto"
 # Here is the screen resolution I set for my virtual machine.
 # Of course,you can use it directly on your physical computer.
 #exec --no-startup-id "xrandr -s 1024x768"
-#exec_always --no-startup-id "xrandr -s 1024x768"
+exec_always --no-startup-id "xrandr -s 1024x768"
 
 ## Set the input method.
 #
