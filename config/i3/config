@@ -181,9 +181,9 @@ exec_always --no-startup-id "picom -CGb"
 # Remember to put some favorite pictures under /usr/share/backgrounds/.
 # Similarly, can set the file path to any path and place your favorite images in it 
 # for better management of desktop wallpaper.
-#exec --no-startup-id "feh --recursive --randomize --bg-fill --no-fehbg /usr/share/backgrounds/"
-exec_always --no-startup-id "feh --recursive --randomize --bg-fill --no-fehbg /usr/share/backgrounds/"
-#exec_always --no-startup-id "feh --recursive --randomize --bg-fill --no-fehbg /usr/share/wallpapers/"
+#exec --no-startup-id "feh --recursive --randomize --bg-scale --no-fehbg /usr/share/backgrounds/"
+exec_always --no-startup-id "feh --recursive --randomize --bg-scale --no-fehbg /usr/share/backgrounds/"
+#exec_always --no-startup-id "feh --recursive --randomize --bg-scale --no-fehbg /usr/share/wallpapers/"
 # Alternatively, nitrogen can be used to set up the wallpaper.
 # Nitrogen is a popular wallpaper manager that lets you manage and set up your wallpaper. 
 # To set up wallpaper, start Nitrogen and navigate to the directory where the wallpaper image is stored. 
