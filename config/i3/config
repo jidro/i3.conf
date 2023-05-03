@@ -215,11 +215,11 @@ exec_always --no-startup-id "feh --recursive --randomize --bg-scale --no-fehbg /
 # is the most suitable value that can be set at present.
 # If you don't like it, you can use the xrandr command to reset it.
 #exec --no-startup-id "xrandr --auto"
-#exec_always --no-startup-id "xrandr --auto"
+exec_always --no-startup-id "xrandr --auto"
 # Here is the screen resolution I set for my virtual machine.
 # Of course,you can use it directly on your physical computer.
 #exec --no-startup-id "xrandr -s 1024x768"
-exec_always --no-startup-id "xrandr -s 1024x768"
+#exec_always --no-startup-id "xrandr -s 1024x768"
 
 ## Set the input method.
 #
