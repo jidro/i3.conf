@@ -70,6 +70,9 @@ font pango:monospace 8
 # screen before suspend. Use loginctl lock-session to lock your screen.
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -n -c 000000 -i `find /usr/share/ -name *.png`
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -n -c 000000 -i `find /usr/share/ -name *.png`
+#exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -n -c 000000 -i `find /usr/share/backgrounds -name *.png`
+#exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -n -c 000000 -i `find /usr/share/wallpapers -name *.png`
+#exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -n -c 000000 -i `find $HOME/.local/share/wallpapers -name *.png`
 
 ## Set up network management tools.
 #
@@ -100,6 +103,11 @@ exec_always --no-startup-id nm-applet
 # for keyboard input and image rendering. 
 # It also offers tiling capabilities, like GNU Screen or tmux. 
 bindsym $mod+Return exec --no-startup-id kitty
+# Replace the default terminal of i3wm window manager with alacritty.
+# Alacritty is a simple, GPU-accelerated terminal emulator written in Rust.
+# It supports scrollback, 24-bit colors, copy/paste, clicking on URLs, 
+# and custom key bindings.
+#bindsym $mod+Return exec --no-startup-id alacritty
 
 ## Set up the keypad.
 #
@@ -207,11 +215,11 @@ exec_always --no-startup-id "feh --recursive --randomize --bg-scale --no-fehbg /
 # is the most suitable value that can be set at present.
 # If you don't like it, you can use the xrandr command to reset it.
 #exec --no-startup-id "xrandr --auto"
-exec_always --no-startup-id "xrandr --auto"
+#exec_always --no-startup-id "xrandr --auto"
 # Here is the screen resolution I set for my virtual machine.
 # Of course,you can use it directly on your physical computer.
 #exec --no-startup-id "xrandr -s 1024x768"
-#exec_always --no-startup-id "xrandr -s 1024x768"
+exec_always --no-startup-id "xrandr -s 1024x768"
 
 ## Set the input method.
 #
