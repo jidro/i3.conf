@@ -192,6 +192,27 @@ The stated goals for *`i3`* include clear documentation, proper multi-monitor 
   
 - ⑤ Enjoy it~
   
+#### `i3blocks`：
+
+- ① Clone the repository locally。
+  
+- ② Use the `cd` command to enter the `i3block` folder in this repository。
+  
+- ③ Copy the config file and [`scripts`](https://github.com/jidro/i3.conf/tree/master/i3blocks/scripts) folder to the '$HOME/.config/i3block' folder.
+  
+  > **Attention：**
+  > 
+  > Be sure to back up the original file,
+  > 
+  > After copying to the corresponding configuration folder,
+  > 
+  > it may be overwritten.
+  > 
+  > It is difficult to restore.
+  
+- ④ Exit the `i3wm` window manager and enter again （or, restart the computer）。
+  
+- ⑤ Enjoy it ~
 
 ### Disclaimer：
 
