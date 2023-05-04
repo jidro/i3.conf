@@ -13,7 +13,8 @@
 - [`config`](https://github.com/jidro/i3.conf/tree/master/config "config")文件夹 - 为`i3wm`的配置文件，提取自`$HOME/.config/i3/`文件夹。
   
 - [`i3status`](https://github.com/jidro/i3.conf/tree/master/i3status "i3status")文件夹 - 为`i3status`的配置文件，提取自`$HOME/.config/i3status`文件夹。
-  
+
+- [`i3blocks`]  
 
 ### 如何使用：
 

@@ -1,0 +1,87 @@
+# i3blocks configuration file
+#
+# The i3blocks man page describes the usage of the binary,
+# and its website describes the configuration:
+#
+#     https://vivien.github.io/i3blocks
+
+
+# Global properties
+separator=true
+separator_block_width=15
+full_text=〉
+align=center
+color=#DADADA
+
+# Guess the weather hourly
+[weather]
+command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
+#command=curl -Ss 'https://wttr.in/?format=1'
+interval=300
+color=#A4C2F4
+
+[cpu_usage]
+#command=echo CPU: $(( 100 - `vmstat |grep -- 3 |awk '{print $15}'` ))%
+command=$HOME/.config/i3blocks/scripts/cpu/cpu_usage.sh
+interval=2
+LABEL=CPU: 
+
+[iface]
+command=$HOME/.config/i3blocks/scripts/network/iface.sh
+color=#00FF00
+interval=3
+display_wifi_name=0
+#LABEL=wlan0:
+LABEL=IP:
+#IFACE=wlan0
+
+#[ssid]
+#command=$HOME/.config/i3blocks/scripts/network/ssid.sh
+#INTERFACE=wlan0
+#interval=60
+
+# Check the battery level every 5 seconds.
+[battery]
+command=$HOME/.config/i3blocks/scripts/battery/battery.sh
+interval=5
+LABEL=BAT: 
+
+[disk]
+command=$HOME/.config/i3blocks/scripts/disk/disk-simple.sh
+interval=5
+markup=pango
+LABEL=⛁ 
+
+[memory]
+command=$HOME/.config/i3blocks/scripts/memory/memory.sh
+interval=2
+label=MEM: 
+
+#[usb]
+#command=$HOME/.config/i3blocks/scripts/disk/usb.sh
+#markup=pango
+#signal=1
+#interval=10
+
+[volume]
+#command=echo ♪: `amixer get Master |grep -E -o '[0-9]{1,3}?%' |head -1`
+command=$HOME/.config/i3blocks/scripts/voice/volume.sh
+interval=1
+LABEL=♪: 
+signal=1
+
+#[uptime]
+#command=uptime |awk '{print $3, $4}' |cut -c -6
+#interval=2
+
+# The time is updated every 2 seconds.
+[time]
+#command=date '+%Y-%m-%d %H:%M'
+command=$HOME/.config/i3blocks/scripts/time/time-simple.sh
+interval=2
+#STRFTIME_FORMAT=%Y-%m-%d %R
+STRFTIME_FORMAT=%Y-%m-%d %H:%M
+#TZONES=$DEFAULT_TZ,Brazil/East,Australia/Brisbane,Asia/Calcutta
+TZONES=$DEFAULT_TZ
+#TZ_LABELS=,Brazil,AU,Hyderabad
+TZ_LABELS=,
