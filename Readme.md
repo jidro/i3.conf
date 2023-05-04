@@ -14,7 +14,7 @@
   
 - [`i3status`](https://github.com/jidro/i3.conf/tree/master/i3status "i3status")文件夹 - 为`i3status`的配置文件，提取自`$HOME/.config/i3status`文件夹。
 
-- [`i3blocks`]  
+- [`i3blocks`](https://github.com/jidro/i3.conf/tree/master/i3blocks "i3blocks")文件夹 - 为`i3status`（`i3wm`状态栏）平替`i3blocks`（可通过`shell`脚本扩展的`i3wm`状态栏）的配置文件，提取自`$HOME/.config/i3blocks`文件夹。
 
 ### 如何使用：
 
@@ -112,6 +112,7 @@ The stated goals for *`i3`* include clear documentation, proper multi-monitor 
   
 - [`i3status`](https://github.com/jidro/i3.conf/tree/master/i3status "i3status")folder - The configuration file for `i3status` is extracted from the `$HOME/.config/i3status` folder.
   
+- [`i3blocks`](https://github.com/jidro/i3.conf/tree/master/i3blocks "i3blocks")folder - Displace the configuration file for `i3blocks` (the `i3wm` status bar that can be extended by a shell script) from the `$HOME/.config/i3blocks` folder.  
 
 ### How to use：
 
