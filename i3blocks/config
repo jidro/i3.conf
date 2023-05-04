@@ -13,6 +13,7 @@ full_text=〉
 align=center
 color=#DADADA
 
+# The current local weather is displayed in the status bar.
 # Guess the weather hourly
 [weather]
 command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
@@ -20,12 +21,15 @@ command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
 interval=300
 color=#A4C2F4
 
+# The computer's CPU usage,expressed as a percent sign,
+# is reserved for two decimal places.
 [cpu_usage]
 #command=echo CPU: $(( 100 - `vmstat |grep -- 3 |awk '{print $15}'` ))%
 command=$HOME/.config/i3blocks/scripts/cpu/cpu_usage.sh
 interval=2
 LABEL=CPU: 
 
+# The network IP address of the computer is displayed.
 [iface]
 command=$HOME/.config/i3blocks/scripts/network/iface.sh
 color=#00FF00
@@ -35,34 +39,40 @@ display_wifi_name=0
 LABEL=IP:
 #IFACE=wlan0
 
+# The name of the computer's wireless network WIFI is displayed.
 #[ssid]
 #command=$HOME/.config/i3blocks/scripts/network/ssid.sh
 #INTERFACE=wlan0
 #interval=60
 
+# The computer's battery level display.
 # Check the battery level every 5 seconds.
 [battery]
 command=$HOME/.config/i3blocks/scripts/battery/battery.sh
 interval=5
 LABEL=BAT: 
 
+# The disk usage of the computer is displayed.
 [disk]
 command=$HOME/.config/i3blocks/scripts/disk/disk-simple.sh
 interval=5
 markup=pango
 LABEL=⛁ 
 
+# The computer's random access memory usage display.
 [memory]
 command=$HOME/.config/i3blocks/scripts/memory/memory.sh
 interval=2
 label=MEM: 
 
+# USB external storage device access display.
 #[usb]
 #command=$HOME/.config/i3blocks/scripts/disk/usb.sh
 #markup=pango
 #signal=1
 #interval=10
 
+# The volume is displayed in the status bar.
 [volume]
 #command=echo ♪: `amixer get Master |grep -E -o '[0-9]{1,3}?%' |head -1`
 command=$HOME/.config/i3blocks/scripts/voice/volume.sh
@@ -70,10 +80,12 @@ interval=1
 LABEL=♪: 
 signal=1
 
+# The status bar displays the startup time of the computer.
 #[uptime]
 #command=uptime |awk '{print $3, $4}' |cut -c -6
 #interval=2
 
+# The local time is displayed in the status bar.
 # The time is updated every 2 seconds.
 [time]
 #command=date '+%Y-%m-%d %H:%M'
