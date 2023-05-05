@@ -12,6 +12,7 @@ separator_block_width=15
 full_text=〉
 align=center
 color=#DADADA
+markup=none
 
 # The current local weather is displayed in the status bar.
 # Guess the weather hourly
@@ -28,6 +29,7 @@ color=#A4C2F4
 command=$HOME/.config/i3blocks/scripts/cpu/cpu_usage.sh
 interval=2
 LABEL=CPU: 
+color=#8BC3E7
 
 # The network IP address of the computer is displayed.
 [iface]
@@ -51,6 +53,7 @@ LABEL=IP:
 command=$HOME/.config/i3blocks/scripts/battery/battery.sh
 interval=5
 LABEL=BAT: 
+color=#A4DC6A
 
 # The disk usage of the computer is displayed.
 [disk]
@@ -77,8 +80,11 @@ label=MEM:
 #command=echo ♪: `amixer get Master |grep -E -o '[0-9]{1,3}?%' |head -1`
 command=$HOME/.config/i3blocks/scripts/voice/volume.sh
 interval=1
-LABEL=♪: 
-signal=1
+label=♪: 
+signal=10
+color=#A4DC6A
+instance=Master
+#min_width=50
 
 # The status bar displays the startup time of the computer.
 #[uptime]
@@ -97,3 +103,4 @@ STRFTIME_FORMAT=%Y-%m-%d %H:%M
 TZONES=$DEFAULT_TZ
 #TZ_LABELS=,Brazil,AU,Hyderabad
 TZ_LABELS=,
+color=#D8BFD8

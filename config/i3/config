@@ -432,8 +432,8 @@ mode "resize" {
 bar {
 	# Start the status bar of i3wm.
 	# If not, comment all Settings in the bar parameter. 
-	#status_command i3status
-	status_command i3blocks
+	status_command i3status
+	#status_command i3blocks
 
 	# Set the i3wm status bar at the top.
 	# If not, the i3wm status bar defaults to the bottom.
