@@ -432,7 +432,8 @@ mode "resize" {
 bar {
 	# Start the status bar of i3wm.
 	# If not, comment all Settings in the bar parameter. 
-	status_command i3status
+	#status_command i3status
+	status_command i3blocks
 
 	# Set the i3wm status bar at the top.
 	# If not, the i3wm status bar defaults to the bottom.
@@ -465,8 +466,8 @@ bar {
 
 	# Set the font in the status bar.
 	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-	font pango:DejaVu Sans Mono, Icons 8
-	#font pango:monospace, Icons 8
+	#font pango:DejaVu Sans Mono, Icons 8
+	font pango:monospace, Icons 8
 
 	# Set the separator in the status bar.
 	#separator_symbol ":|:"
