@@ -66,6 +66,9 @@ font pango:monospace 9
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 9
 
+# kill focused window
+bindsym $mod+Shift+q kill
+
 ## Set the computer hibernation lock screen.
 #
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
@@ -120,9 +123,28 @@ bindsym $mod+Return exec --no-startup-id kitty
 #exec --no-startup-id "numlockx on"
 #exec_always --no-startup-id "numlockx on"
 
+## Set the keyboard mapping.
+#
+# The keymap files are stored in the /usr/share/kbd/keymaps/ directory tree.
+# Usually one keymap file corresponds to one keyboard layout 
+# (the include statement can be used to share common parts and 
+# a keymap file can contain multiple layouts 
+# with some key combination used for switching).
+# This configuration sets the keyboard map to us.
+exec --no-startup-id setxkbmap -layout "us"
+#exec_always --no-startup-id setxkbmap -layout "us"
+
 ## Set volume management.
 #
 # Start the volume control icon when logging in.
+# pasystray is a PulseAudio system tray applet responsible 
+# for volume management.
+# PulseAudio system tray (a replacement for padevchooser)
+# Before using this configuration,
+# don't forget to install a piece of software called pasystray.
+# Otherwise, it won't have any effect, it won't work.
+#exec --no-startup-id pasystray
+#exec_always --no-startup-id pasystray
 # Don't forget to install a software called volumeicon before using it.
 exec --no-startup-id volumeicon
 #exec_always --no-startup-id volumeicon
@@ -146,12 +168,28 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 #exec --no-startup-id "xrdb -merge -I$HOME ~/.Xresources"
 exec_always --no-startup-id "xrdb -merge -I$HOME ~/.Xresources"
 
-# kill focused window
-bindsym $mod+Shift+q kill
-
 ## Setup bookmarks for file manager
 #exec --no-startup-id gtk-bookmarks-update
 exec_always --no-startup-id gtk-bookmarks-update
+
+## Set the identity authentication component.
+#
+# Authentication agents
+# polkit is an application-level toolkit for defining 
+# and handling the policy that allows unprivileged processes 
+# to speak to privileged processes: 
+# It is a framework for centralizing the decision making process 
+# with respect to granting access to privileged operations 
+# for unprivileged applications.
+# Simple polkit authentication agent for LXDE.
+# The preferred polkit is lxpolkit. 
+# Therefore, before using this configuration, 
+# don't forget to install a piece of software 
+# called lxsession or lxsession-gtk3 to make lxpolkit available. 
+# Remember, you must install lxsession or lxsession-gtk3 software, 
+# otherwise it will have no effect and cannot be used.
+exec --no-startup-id lxpolkit
+#exec_always --no-startup-id lxpolkit
 
 ## Set up the application launcher.
 #
@@ -249,6 +287,13 @@ exec_always --no-startup-id "dunst &"
 ## Set the power display.
 #
 # Set the power display small icon corner marker.
+# cbatticon is a battery icon that sits in the system tray.
+# Lightweight battery icon for the system tray.
+# Before using this configuration,
+# don't forget to install a piece of software called cbatticon.
+# Otherwise, it won't have any effect, it won't work.
+#exec --no-startup-id cbatticon
+#exec_always --no-startup-id cbatticon
 # Don't forget to install an application called lxqt-powermanagement.
 #exec --no-startup-id "lxqt-powermanagement &"
 exec_always --no-startup-id "lxqt-powermanagement &"
@@ -470,6 +515,7 @@ bar {
 	hidden_state hide
 	# Set the status bar to display shortcut keys.
 	# The default is the system mode mod key.
+	#modifier Mod4
 	modifier Mod1
 
 	# Set the workspace buttons in the status bar.
