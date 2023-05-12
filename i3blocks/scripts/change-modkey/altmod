@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#
+# Altmod script to switch super to alt
+# badly coded by Mr Green [mrgreen@archbang.org]
+#
+
+# change i3 config to use alt
+sed -i 's/Mod4/Mod1/g' $HOME/.config/i3/config
+
+# Update conky to reflect change
+sed -i 's/Super/Alt/g' $HOME/.config/conky/conky.conf
+
+# update i3 config
+i3-msg reload

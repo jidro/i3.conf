@@ -1,0 +1,90 @@
+configuration{
+    modi: "drun,window,ssh";
+    font: "Sans 10";
+    show-icons: true;
+    terminal: "lxterminal";
+    drun-display-format: "{icon} {name}";
+    display-drun: " Run: ";
+    location: 0;
+    disable-history: false;
+    hide-scrollbar: true;
+}
+
+@theme "/dev/null"
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+* {
+    dark-black: #100b05;
+    bg-col:  #100b05;
+    border-col: #798A07;
+    blue: #798A07;
+	selected-col: #798A07;
+	fg-col: #FFFFFF;
+    fg-col2: #FFFFFF;
+    width: 600;
+}
+
+window {
+    padding: 20px;
+    height: 300px;
+    border: 3px;
+    border-color: @border-col;
+    background-color: @bg-col;
+}
+
+mainbox {
+    padding: 5px;
+    border-radius: 13px;
+    background-color: @bg-col;
+}
+
+inputbar {
+    children: [prompt,entry];
+    background-color: @bg-col;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+prompt {
+    background-color: @blue;
+    padding: 5px 5px 0px;
+    text-color: @fg-col;
+    border-radius: 3px;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+entry {
+    padding: 6px;
+    text-color: @fg-col;
+    background-color: @bg-col;
+}
+
+listview {
+    border: 0px 0px 0px;
+    padding: 6px 0px 0px;
+    columns: 2;
+    background-color: @bg-col;
+}
+
+element {
+    padding: 5px;
+    background-color: @bg-col;
+    text-color: @fg-col  ;
+}
+
+element-icon {
+    size: 25px;
+}
+
+element selected {
+    background-color:  @selected-col ;
+    text-color: @fg-col2  ;
+}

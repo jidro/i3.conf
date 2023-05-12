@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# Badly coded by MrGreen <mrgreen@archbang.org>
+
+# Variables
+mirror=/etc/pacman.d/mirrorlist
+backup=/etc/pacman.d/mirrorlist.abbackup
+
+# Painful Logic ;-)
+[[ -f ${backup} ]] && sudo cp ${backup} ${mirror} || sudo cp ${mirror} ${backup}
+
+# Calculate number of lines until first country servers
+LINES=$(expr $(sed -n '0,/Argentina/p' ${mirror} | wc -l) - 1)
+
+# delete LINES from mirrorlist.
+sudo sed -i "1,${LINES}d" ${mirror}
+
+# Uncomment Server List
+sudo sed -i "s/#Server/Server/g" ${mirror}
+
+# create array of countries do I need an array?
+while IFS= read -r line
+do
+  [[ $line =~ ^##.* ]] && location+="${line//##}|"
+done < "${mirror}"
+
+# Call rofi as dmenu 
+selection=$(echo "${location}" | rofi -dmenu -i -sep '|' -p "Select Country:")
+
+# Magic happens here create server list based on selection
+sudo sed -i -n -r "/${selection}/,/^\s*$/p" "${mirror}"
+
+

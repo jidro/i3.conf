@@ -105,3 +105,32 @@ TZONES=$DEFAULT_TZ
 #TZ_LABELS=,Brazil,AU,Hyderabad
 TZ_LABELS=,
 color=#D8BFD8
+
+[shortcut]
+full_text= ⌨️
+color=#798A07
+command=$HOME/.config/i3blocks/scripts/shortcut/i3-binds.sh
+
+[terminal]
+full_text= 
+color=#DBDBDB
+command=i3-msg -q exec kitty
+
+[browser]
+#full_text= 
+full_text= 🌏
+color=#D7AB60
+#command=i3-msg -q exec firefox-esr
+command=i3-msg -q exec firefox
+
+[files]
+#full_text= 
+full_text= 📁
+color=#8EAEDD
+#command=i3-msg -q exec pcmanfm ~/
+command=i3-msg -q exec pcmanfm
+
+[shutdown_menu]
+full_text=
+command=$HOME/.config/i3blocks/scripts/exit/exitmenu
+color=#798A07
