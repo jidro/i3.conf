@@ -77,8 +77,8 @@ bindsym $mod+Shift+q kill
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -n -c 000000 -i `find /usr/share/ -name *.png`
-exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -n -c 000000 -i `find /usr/share/ -name *.png`
-#exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -n -c 000000 -i `find /usr/share/backgrounds -name *.png`
+#exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -n -c 000000 -i `find /usr/share/ -name *.png`
+exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -n -c 000000 -i `find /usr/share/backgrounds -name *.png`
 #exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -n -c 000000 -i `find /usr/share/wallpapers -name *.png`
 #exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -n -c 000000 -i `find $HOME/.local/share/wallpapers -name *.png`
 
@@ -293,10 +293,10 @@ exec_always --no-startup-id "dunst &"
 # don't forget to install a piece of software called cbatticon.
 # Otherwise, it won't have any effect, it won't work.
 #exec --no-startup-id cbatticon
-#exec_always --no-startup-id cbatticon
+exec_always --no-startup-id cbatticon
 # Don't forget to install an application called lxqt-powermanagement.
 #exec --no-startup-id "lxqt-powermanagement &"
-exec_always --no-startup-id "lxqt-powermanagement &"
+#exec_always --no-startup-id "lxqt-powermanagement &"
 
 ## Set up the cutting board.
 #
@@ -484,8 +484,8 @@ mode "resize" {
 bar {
 	# Start the status bar of i3wm.
 	# If not, comment all Settings in the bar parameter. 
-	status_command i3status
-	#status_command i3blocks
+	#status_command i3status
+	status_command i3blocks
 
 	# When the status_command prints a new line to stdout, i3 status bar updates.
 	# The default just shows the current date and time.
