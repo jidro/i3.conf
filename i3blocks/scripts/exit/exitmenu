@@ -5,7 +5,7 @@
 options="Log Out\nReboot\nPoweroff"
 
 #chosen=$(echo -e "$options" | rofi -p 'Select Option' -dmenu )
-chosen=$(echo -e "$options" | rofi -p 'Select Option' -dmenu -config $HOME/.config/i3blocks/scripts/exit/config.rasi)
+chosen=$(echo -e "$options" | rofi -p 'Select Option' -dmenu -lines 12 -padding 18 -width 60 -sidebar-mode -column 3 -config $HOME/.config/i3blocks/scripts/exit/config.rasi)
 
 case $chosen in
 	"Log Out") i3 exit ;;
