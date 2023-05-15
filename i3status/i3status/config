@@ -32,7 +32,8 @@ order	+=	"tztime local"
 
 cpu_usage {
 #	format = "CPU: %usage CPU_0: %cpu0 CPU_1: %cpu1"
-	format = "CPU: %usage"
+#	format = "CPU: %usage"
+	format = "🧠 %usage"
 #	max_threshold = "90"
 #	format_above_threshold = "Warning above threshold: %usage"
 	degraded_threshold = "70"
@@ -40,7 +41,8 @@ cpu_usage {
 }
 
 cpu_temperature 0 {
-        format = "T: %degrees °C"
+#	format = "T: %degrees °C"
+	format = "🌡️ %degrees °C"
 #	format_above_threshold = "Warning T above threshold: %degrees °C"
 #	max_threshold = "70"
         path = "/sys/devices/platform/coretemp.0/temp1_input"

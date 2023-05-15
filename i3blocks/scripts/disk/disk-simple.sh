@@ -6,4 +6,5 @@ DISK_ALL=`df -h |grep ' /$' |awk '{print $2}'`
 DISK_PERCENTAGE=$(( 100 - `df -h |grep ' /$' |awk '{print $5}' |sed 's/.$//'` ))%
 
 #echo ⛁ $DISK_USE/$DISK_ALL - \($DISK_PERCENTAGE\)
-echo ⛁ $DISK_USE/$DISK_ALL \($DISK_PERCENTAGE\)
+#echo ⛁ $DISK_USE/$DISK_ALL \($DISK_PERCENTAGE\)
+echo $DISK_USE/$DISK_ALL \($DISK_PERCENTAGE\)
