@@ -17,8 +17,8 @@ markup=none
 # The current local weather is displayed in the status bar.
 # Guess the weather hourly
 [weather]
-command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
-#command=curl -Ss 'https://wttr.in/?format=1'
+#command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
+command=curl -Ss 'https://wttr.in/?format=1'
 #command=curl -Ss 'https://wttr.in/?format=4'
 interval=300
 color=#A4C2F4
