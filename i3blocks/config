@@ -113,7 +113,7 @@ color=#D8BFD8
 
 [shutdown_menu]
 #full_text= 
-full_text= 📴
+full_text= 🔌
 command=$HOME/.config/i3blocks/scripts/exit/exitmenu
 color=#798A07
 
@@ -131,8 +131,8 @@ command=i3-msg -q exec kitty
 #full_text= 
 full_text=🌏
 color=#D7AB60
-command=i3-msg -q exec firefox-esr
-#command=i3-msg -q exec firefox
+#command=i3-msg -q exec firefox-esr
+command=i3-msg -q exec firefox
 
 [files]
 full_text=  
